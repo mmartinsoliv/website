@@ -1,0 +1,67 @@
+## Getting Started
+A quick tutorial to get you up and running with Easy Hooks TS.
+
+## Implementing useToggle
+In this quick tutorial, we will install custom hook useToggle.
+
+### 1. Install the hook
+Install the custom hook from your command line.
+
+
+import { Tab, Tabs } from 'nextra-theme-docs'
+
+<Tabs items={['pnpm', 'npm', 'yarn']}>
+  <Tab>
+    **pNPM**: Fast, disk space efficient package manager.
+    ```bash filename="bash" copy
+      pnpm install easy-hooks-ts
+    ```
+  </Tab>
+  <Tab>
+    **npm** is a package manager for the JavaScript programming language.
+    ```bash filename="bash" copy
+      npm install easy-hooks-ts
+    ```
+  </Tab>
+  <Tab>
+    **Yarn** is a software packaging system.
+    ```bash filename="bash" copy
+      yarn add easy-hooks-ts
+    ```
+  </Tab>
+</Tabs>
+
+
+### 2. Import the custom hook
+Import and structure the parts.
+
+```js filename="demo.js" copy
+import { useToggle } from 'easy-hooks-ts'
+
+export const Component = () => {
+  const [value, toggle, setValue] = useToggle()
+
+  const customToggle = () => setValue((x: boolean) => !x)
+
+  return (
+    <>
+      <p>
+        Value is <code>{value.toString()}</code>
+      </p>
+      <button onClick={() => setValue(true)}>set true</button>
+      <button onClick={() => setValue(false)}>set false</button>
+      <button onClick={toggle}>toggle</button>
+      <button onClick={customToggle}>custom toggle</button>
+    </>
+  )
+}
+```
+
+## Demo
+
+import { Callout } from 'nextra-theme-docs'
+
+<Callout emoji="👾">
+  **Space Invaders** is a 1978 shoot 'em up arcade game developed by Tomohiro
+  Nishikado.
+</Callout>

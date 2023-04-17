@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': ^18.15.11
+  easy-hooks-ts: ^0.4.0
   next: ^13.3.0
   nextra: ^2.4.0
   nextra-theme-docs: ^2.4.0
@@ -10,6 +11,7 @@ specifiers:
   typescript: ^5.0.4
 
 dependencies:
+  easy-hooks-ts: 0.4.0_biqbaboplfbrettd7655fr4n2y
   next: 13.3.0_biqbaboplfbrettd7655fr4n2y
   nextra: 2.4.0_yucv4tfv7v7nrkw2uguegj6e7e
   nextra-theme-docs: 2.4.0_zjtljgkl22tbcpoe6tc442tdum
@@ -534,6 +536,16 @@ packages:
   /diff/5.1.0:
     resolution: {integrity: sha512-D+mk+qE8VC/PAUrlAU34N+VfXev0ghe5ywmpqrawphmVZc1bEfn56uo9qpyGp1p4xpzOHkSW4ztBd6L7Xx4ACw==}
     engines: {node: '>=0.3.1'}
+    dev: false
+
+  /easy-hooks-ts/0.4.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-I1WcHyiqAPkK1ACvUkaeeP0FSF7/avxwKGSMZ3+WYTJOScc1rAejVEe0Dn9RBbRzdXN+gEzacjbkpjfqyeLaaQ==}
+    peerDependencies:
+      react: ^16.8.0  || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0  || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /escape-string-regexp/1.0.5:

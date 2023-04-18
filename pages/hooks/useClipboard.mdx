@@ -1,0 +1,50 @@
+## Hook - useClipboard
+
+The `useClipboard` hook accepts only one argument `{ timeout: 2000 }` (default 2000ms) which is the time the success message will be available on the screen.
+
+This hook returns an object with the following properties:
+
+- copy – copies the text to the clipboard
+- copied – boolean that indicates that the function was executed, if there is a timeout, it returns a false arrow after the configured time
+- reset – clears the timeout and resets the value of `copied` to false
+
+🚨 For the navigator.clipboard API to work, it needs to be in a secure environment, i.e. https or localhost.
+
+### API
+
+```js filename="demo.js" copy
+import { useClipboard } from 'easy-hooks-ts'
+
+export const Component = () => {
+    const clipboard = useClipboard() // default is 2000ms
+    const clipboardFastTransition = useClipboard({ timeout: 600 }) // fast feedback
+    const clipboardForever = useClipboard({ timeout: 0 }) // forever
+    return (
+      <>
+        <button
+          onClick={() => clipboard.copy('Hello, world!')}
+        >
+          {clipboard.hasCopied ? '✓ Copied' : 'Click to copy'}
+        </button>
+        <button
+          onClick={() => clipboardFastTransition.copy('Hello, world!')}
+        >
+          {clipboardFastTransition.hasCopied ? '✓ Copied' : 'Fast'}
+        </button>
+        <button
+          onClick={() => clipboardForever.copy('Hello, world!')}
+        >
+          {clipboardForever.hasCopied ? '✓ Copied' : 'Forever'}
+        </button>
+      </>
+    )
+}
+```
+
+### Demo
+
+import { Callout } from 'nextra-theme-docs'
+
+<Callout type="warning" emoji="ℹ️">
+  Coming Soon
+</Callout>

@@ -1,0 +1,44 @@
+import StackBlitz from '../../components/StackBlitz'
+
+## Hook - useFetch
+This is a custom hook called useFetch which is designed to make fetching data from an API easier in a React component.
+
+It takes an initialUrl as a parameter and returns an array of two values. The first value.
+
+### API
+
+```js filename="demo.js" copy
+import { useToggle } from 'easy-hooks-ts'
+
+export const Component = () => {
+  const [username, setUsername] = React.useState('');
+  const [fetchState, setUrl] = useFetch(null);
+
+  const handleSearch = () => {
+    setUrl(`https://api.github.com/users/${username}`);
+  };
+
+  return (
+    <div>
+      <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
+      <button onClick={handleSearch}>Search</button>
+      {fetchState.isLoading && <p>Loading...</p>}
+      {fetchState.error && <p>Error: {fetchState.error}</p>}
+      {fetchState.data && (
+        <div>
+          <h1>{fetchState.data.name}</h1>
+          <p>{fetchState.data.bio}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+### Demo
+
+<StackBlitz
+  name="react-ts-xmcqjh"
+  openFile="App.tsx"
+  view="both"
+/>

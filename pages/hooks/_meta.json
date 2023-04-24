@@ -1,4 +1,5 @@
 {
+  "useCounter": "useCounter",
   "useToggle": "useToggle",
   "useClipboard": "useClipboard"
 }

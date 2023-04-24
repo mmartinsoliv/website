@@ -1,0 +1,6 @@
+{
+  "counter": "useCounter",
+  "toggle": "useToggle",
+  "clipboard": "useClipboard",
+  "fetch": "useFetch"
+}
